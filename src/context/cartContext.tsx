@@ -44,7 +44,7 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
             const data= await Deleteitemlist(id)
             const dataa :wishlist= data.data
             userwishlist()
-            return  data
+            return  dataa
         } catch (error) {
             console.log(error);
         }
@@ -58,7 +58,7 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
             setwishproducct(data.data)
             setofwishitem(data.count)
             setCartid(data.data.id)
-            return data
+            return dataa
         } catch (error) {
             console.log(error);
 
@@ -74,8 +74,7 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
             setProducts(data.data.products)
             setnumOfCartItems(data.numOfCartItems)
             settotalPrice(data.data.totalCartPrice)
-            
-            return data
+            return dataa
         } catch (error) {
             console.log(error);
 
@@ -92,7 +91,7 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
             setnumOfCartItems(data.numOfCartItems)
             settotalPrice(data.data.totalCartPrice)
 
-
+                return dataa
         } catch (error) {
             console.log(error);
 
@@ -122,8 +121,7 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
             setnumOfCartItems(data.numOfCartItems)
             settotalPrice(data.data.totalCartPrice)
             setCartid(data.cartId)
-            // console.log(data)
-            return data
+            return dataa
         } catch (error) {
             console.log(error);
 

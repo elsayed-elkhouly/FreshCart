@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios"
-import { Wishproduct } from "./wishlist.type"
+import { wishlist, Wishproduct } from "./wishlist.type"
 
 export interface Cart {
   status: string
@@ -67,8 +67,8 @@ export interface CartContextType {
   clearAllCart: () => void;
   Addtocart: (id: string) => Promise<Cart>; // تقدر تغيّر any للـ type اللي addtocartAction بيرجّعه
   wishproducct: Wishproduct[];
-  Addtowishlist: (id: string) => Promise<Cart>;        // لو عندك type محدد للـ wishlist رجّعه هنا
-  deletwishitem: (id: string) =>Promise<AxiosResponse<Wishproduct>>;
+   Addtowishlist: (id: string) => Promise<wishlist | undefined>;   // ✅
+  deletwishitem: (id: string) => Promise<wishlist | undefined>;   // ✅
    numofwishitem: number;     // عدد عناصر الـ wishlist
   cartid: string;            // cart id
  
