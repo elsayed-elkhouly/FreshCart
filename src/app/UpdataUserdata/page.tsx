@@ -6,7 +6,7 @@ import { ChangeDataSchema, ChangeDataSchemaType } from '@/shcema/ChangeDataSchce
 import { getmytoken } from '@/utilites/token'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios from 'axios'
-import { signOut } from 'next-auth/react'
+
 import React, { useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'

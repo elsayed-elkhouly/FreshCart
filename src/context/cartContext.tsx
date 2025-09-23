@@ -4,7 +4,6 @@ import { Clearcart } from '@/app/CarAction/clearCart'
 import { getuserCart } from '@/app/CarAction/getuserCart'
 import { Removeitem } from '@/app/CarAction/removeCartitem'
 import { udateItemCount } from '@/app/CarAction/updatecartcount'
-import { detUserOrders } from '@/app/PaymentAction/getuserorder'
 import { AddtoList } from '@/app/wishlistaction/AddtoList'
 import { Deleteitemlist } from '@/app/wishlistaction/deletiltemlist'
 import { getuserwish } from '@/app/wishlistaction/getuserwish'
@@ -21,7 +20,6 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
     const [numOfCartItems, setnumOfCartItems] = useState(0)
     const [Products, setProducts] = useState([])
     const [totalPrice, settotalPrice] = useState(0)
-
     const [wishproducct, setwishproducct] = useState([])
     const [numofwishitem, setofwishitem] = useState(0)
     const [cartid, setCartid] = useState("")
@@ -43,7 +41,8 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
     }
     async function deletwishitem(id: string) {
         try {
-            const data: Wishproduct = await Deleteitemlist(id)
+            const data= await Deleteitemlist(id)
+            const dataa :wishlist= data.data
             userwishlist()
             return  data
         } catch (error) {
