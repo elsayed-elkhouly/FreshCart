@@ -16,6 +16,8 @@ import { Product } from '@/types/product.type'
 import getallProduct from '@/apis/getallProduct'
 const Products = async () => {
   const data: Product[] = await getallProduct()
+console.log(data);
+
   return (
     <section className=" mx-auto w-full md:w-[90%] px-5 md:px-0 py-10">
       <title>Products</title>
