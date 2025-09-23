@@ -2,7 +2,7 @@
 import Image from "next/image"
 import logo from "./../../../../public/freshcart-logo.svg"
 import Link from "next/link"
-import { signOut, useSession } from "next-auth/react"
+import { useSession } from "next-auth/react"
 import { useContext } from "react"
 import { Cartcontext } from "@/context/cartContext"
 import { Badge } from "@/components/ui/badge"

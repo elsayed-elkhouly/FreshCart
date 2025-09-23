@@ -1,6 +1,4 @@
 import getSinglebrand from '@/apis/getsinglebrand'
-import Addbtn from '@/app/_Componants/addbtn/Addbtn'
-import ImageSlider from '@/app/_Componants/imageslider/ImageSlider'
 import Image from 'next/image'
 import React from 'react'
 

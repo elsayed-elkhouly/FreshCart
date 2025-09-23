@@ -1,11 +1,11 @@
 "use client"
-
 import { Cartcontext } from '@/context/cartContext';
 import { wishlist} from '@/types/wishlist.type';
 import React, { useContext } from 'react'
 import { toast } from 'sonner';
 
 const Wichbtn = ({id}:{id:string}) => {
+  
     const {Addtowishlist,wishproducct} =useContext(Cartcontext)
      const ID =wishproducct.map(function(idx){return idx.id })
   
