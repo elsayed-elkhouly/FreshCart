@@ -19,7 +19,7 @@ const ImageSlider = ({data}:{data:Data}) => {
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
-    {data.images.map(function(image,idx){return <div key={idx}><SwiperSlide ><Image className='w-fit' src={image} alt=''  width={200} height={200}/></SwiperSlide>
+    {data?.images?.map(function(image,idx){return <div key={idx}><SwiperSlide ><Image className='w-fit' src={image} alt=''  width={200} height={200}/></SwiperSlide>
     </div>}
       
     )}

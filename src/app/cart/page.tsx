@@ -4,7 +4,6 @@ import { Cartcontext } from '@/context/cartContext'
 import { CartProduct } from '@/types/userCart.type'
 import Image from 'next/image'
 import React, { useContext } from 'react'
-import Loding from '../loading'
 import Link from 'next/link'
 
 const Cart = () => {
@@ -35,7 +34,7 @@ const { numOfCartItems, Products, totalPrice, removeCartItem, CartUpdate, clearA
             <p className='pe-3.5 my-3 font-bold'>total number of items:  <span className='text-green-500'> {numOfCartItems}</span></p>
           </div>
         </div>
-        {Products.map(function (products: CartProduct, idx: number) {
+        {Products?.map(function (products: CartProduct, idx: number) {
           return <div key={idx} className='py-5 justify-between border-b-2 border-gray-400 my-5 flex items-center'>
             <div className='flex items-center gap-5'>
               <Image src={products.product.imageCover} alt='' width={200} height={200} />
