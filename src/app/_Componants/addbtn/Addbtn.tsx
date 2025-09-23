@@ -14,7 +14,7 @@ const { Addtocart }=context;
   async function handelAddtocart(){
 
     setisloding(true)
-   const data =  await Addtocart(id)
+   const data =  await Addtocart(id) 
    if (data.status==="success") {
     toast.success(data.message,{
         duration:1500,

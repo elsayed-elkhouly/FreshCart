@@ -5,7 +5,7 @@ import { ChangePassSchema, ChangePassSchemaType } from '@/shcema/CahngepassSchem
 import { ChangeDataSchema, ChangeDataSchemaType } from '@/shcema/ChangeDataSchcema'
 import { getmytoken } from '@/utilites/token'
 import { zodResolver } from '@hookform/resolvers/zod'
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 
 import React, { useRef } from 'react'
 import { useForm } from 'react-hook-form'
@@ -38,11 +38,11 @@ const UpdateUser = () => {
 
             })
         } catch (error) {
-
-            toast.error(error.response.data.message, {
-                position: "top-center"
-            })
-        }
+  const err = error as AxiosError<{ message: string }>;
+  toast.error(err.response?.data?.message ?? "Something went wrong", {
+    position: "top-center",
+  });
+}
 
     }
     return (

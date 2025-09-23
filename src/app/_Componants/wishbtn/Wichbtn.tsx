@@ -2,6 +2,7 @@
 import { Cartcontext } from '@/context/cartContext';
 import { wishlist} from '@/types/wishlist.type';
 import React, { useContext } from 'react'
+import { toast } from 'sonner';
 
 
 const Wichbtn = ({id}:{id:string}) => {
@@ -16,14 +17,14 @@ const {Addtowishlist,wishproducct}=context;
   
     
    async function handeleish(){
-      const data:wishlist =  await Addtowishlist(id)
+      const data=  await Addtowishlist(id)
       console.log(data);
-  //       if (data.status==="success") {
-  //   toast.success(data.message,{
-  //       duration:1500,
-  //       position:'top-center'
-  //   })
-  //  }
+        if (data.status==="success") {
+    toast.success(data.message,{
+        duration:1500,
+        position:'top-center'
+    })
+   }
      
       return data
     }

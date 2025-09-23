@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input"
 import { RegisterSchame, RegisterSchameType } from "@/shcema/RegisterShcema"
 
 import { zodResolver } from "@hookform/resolvers/zod"
-import axios from "axios"
+import axios, { AxiosError } from "axios"
 import { useRouter } from "next/navigation"
 import React from 'react'
 import { useForm } from 'react-hook-form'
@@ -40,12 +40,11 @@ async function register(value: RegisterSchameType) {
       })  
       Router.push("/login")   
     } catch (error) {
-      
-       toast.error(error.response.data.message,{
-        position:"top-center"
-      }) 
-    }
-
+  const err = error as AxiosError<{ message: string }>;
+  toast.error(err.response?.data?.message ?? "Something went wrong", {
+    position: "top-center",
+  });
+}
   }
   return (
     <div className='my-6 mx-auto w-full md:w-1/2 px-2'>

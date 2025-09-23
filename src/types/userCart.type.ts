@@ -6,6 +6,7 @@ export interface Cart {
   numOfCartItems: number
   cartId: string
   data: Data
+  message:string
 }
 
 export interface Data {
@@ -72,4 +73,9 @@ export interface CartContextType {
   cartid: string;            // cart id
  
 
+}
+export interface AddToCartResponse {
+  status: "success" | "error";
+  message: string;
+  numOfCartItems?: number; // لو موجود
 }

@@ -1,8 +1,6 @@
-
 import getSinglePost from '@/apis/getSinglePost'
 import Addbtn from '@/app/_Componants/addbtn/Addbtn'
 import ImageSlider from '@/app/_Componants/imageslider/ImageSlider'
-import { Product } from '@/types/product.type'
 import { Data } from '@/types/productDetailes.type'
 import React from 'react'
 const ProductDetails = async ({ params }: { params: { id: string } }) => {
