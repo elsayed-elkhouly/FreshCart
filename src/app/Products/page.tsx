@@ -16,14 +16,13 @@ import { Product } from '@/types/product.type'
 import getallProduct from '@/apis/getallProduct'
 const Products = async () => {
   const data: Product[] = await getallProduct()
-console.log(data);
-
+ const s =data ||[]
   return (
     <section className=" mx-auto w-full md:w-[90%] px-5 md:px-0 py-10">
       <title>Products</title>
       <div className=" flex flex-wrap">
 
-        {data?.map(function (prduct: Product, idx) {
+        {s?.map(function (prduct: Product, idx) {
           return <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/5" key={idx}>
             <div className="ineer p-3">
               <Card className="p-0 relative ">

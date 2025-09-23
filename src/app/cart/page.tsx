@@ -21,8 +21,10 @@ const { numOfCartItems, Products, totalPrice, removeCartItem, CartUpdate, clearA
       <title>Cart</title>
       <h1 className='text-red-700 text-3xl font-bold ' > No Data </h1></div>
   }
+  const s =Products ||[]
   return (
     <>
+
       <div className='mx-auto w-full md:w-[80%] bg-gray-100 my-10 p-5'>
         <div className='my-5 flex items-center justify-between' >
           <div>
@@ -34,7 +36,7 @@ const { numOfCartItems, Products, totalPrice, removeCartItem, CartUpdate, clearA
             <p className='pe-3.5 my-3 font-bold'>total number of items:  <span className='text-green-500'> {numOfCartItems}</span></p>
           </div>
         </div>
-        {Products?.map(function (products: CartProduct, idx: number) {
+        {s?.map(function (products: CartProduct, idx: number) {
           return <div key={idx} className='py-5 justify-between border-b-2 border-gray-400 my-5 flex items-center'>
             <div className='flex items-center gap-5'>
               <Image src={products.product.imageCover} alt='' width={200} height={200} />

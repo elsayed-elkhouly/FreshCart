@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { Data } from '@/types/productDetailes.type';
 const ImageSlider = ({data}:{data:Data}) => {
   console.log(data);
+   const s =data ||[]
   return (
     
     
@@ -19,7 +20,7 @@ const ImageSlider = ({data}:{data:Data}) => {
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
-    {data?.images?.map(function(image,idx){return <div key={idx}><SwiperSlide ><Image className='w-fit' src={image} alt=''  width={200} height={200}/></SwiperSlide>
+    {s?.images?.map(function(image,idx){return <div key={idx}><SwiperSlide ><Image className='w-fit' src={image} alt=''  width={200} height={200}/></SwiperSlide>
     </div>}
       
     )}
