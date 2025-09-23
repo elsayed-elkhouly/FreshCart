@@ -63,9 +63,9 @@ export interface CartContextType {
   removeCartItem: (id: string) => void;
   CartUpdate: (id: string, count: number) => void;
   clearAllCart: () => void;
-  Addtocart: (id: string) => void; // تقدر تغيّر any للـ type اللي addtocartAction بيرجّعه
+  Addtocart: (id: string) => any; // تقدر تغيّر any للـ type اللي addtocartAction بيرجّعه
   wishproducct: Wishproduct[];
-  Addtowishlist: (id: string) => void;        // لو عندك type محدد للـ wishlist رجّعه هنا
+  Addtowishlist: (id: string) => any;        // لو عندك type محدد للـ wishlist رجّعه هنا
   deletwishitem: (id: string) =>void;
    numofwishitem: number;     // عدد عناصر الـ wishlist
   cartid: string;            // cart id

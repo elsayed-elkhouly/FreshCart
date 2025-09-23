@@ -9,21 +9,21 @@ import { useRouter } from 'next/navigation'
 import { OnlineOrder } from '../PaymentAction/Onlineorder'
 
 const Payment = () => {
-    const context  = useContext(Cartcontext)
-  if (!context) {
-  throw new Error("Cartcontext must be used within a CartProvider");
-}
-const {cartid , clearAllCart }=context;
-    const details = useRef("")
-    const phone = useRef("")
-    const City = useRef("")
+    const context = useContext(Cartcontext)
+    if (!context) {
+        throw new Error("Cartcontext must be used within a CartProvider");
+    }
+    const { cartid, clearAllCart } = context;
+    const details = useRef<HTMLInputElement>(null);
+    const phone = useRef<HTMLInputElement>(null);
+    const City = useRef<HTMLInputElement>(null);
     const router = useRouter()
     async function onlinepayment() {
         const values = {
             shippingAddress: {
-                details: details.current.value,
-                phone: phone.current.value,
-                city: City.current.value
+                details:  details.current?.value,
+                phone:phone.current?.value,
+                City :City.current?.value,
             }
         }
 
@@ -31,7 +31,7 @@ const {cartid , clearAllCart }=context;
             const data = await OnlineOrder(cartid, values)
             console.log(data);
 
-            if(data.status === "success") {
+            if (data.status === "success") {
                 window.location.href = data.session.url
 
             }
@@ -47,11 +47,11 @@ const {cartid , clearAllCart }=context;
         }
     }
     async function cashpayment() {
-        const values  = {
+        const values = {
             shippingAddress: {
-                details: details.current.value,
-                phone: phone.current.value,
-                city: City.current.value
+                details:details.current?.value, 
+                phone: phone.current?.value,
+                City: City.current?.value
             }
         }
 
