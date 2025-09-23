@@ -15,7 +15,7 @@ const { wishproducct,deletwishitem }=context;
     const data = await deletwishitem(id)
     return data
   }
-  
+   const s =wishproducct ||[]
   return (
     <>
       <div className='mx-auto w-full md:w-[80%] bg-gray-100 my-10 p-5'>
@@ -24,7 +24,7 @@ const { wishproducct,deletwishitem }=context;
           <div><h1 className=' text-2xl font-bold  mb-5'>My WishList</h1>
           </div>
         </div>
-        {wishproducct.map(function (products: Wishproduct, idx: number) {
+        {s.map(function (products: Wishproduct, idx: number) {
           return <div key={idx} className='py-5 justify-between border-b-2 border-gray-400 my-5 flex items-center'>
             <div className='flex items-center gap-5'>
               <Image src={products?.imageCover} alt='' width={200} height={200}/>

@@ -13,7 +13,7 @@ const context  = useContext(Cartcontext)
 }
 const {Addtowishlist,wishproducct}=context;
     
-     const ID =wishproducct.map(function(idx){return idx.id })
+    const ID = wishproducct?.map((idx) => idx.id) ?? [];
   
     
    async function handeleish(){
