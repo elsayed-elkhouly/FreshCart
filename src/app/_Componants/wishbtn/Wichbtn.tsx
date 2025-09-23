@@ -17,14 +17,14 @@ const {Addtowishlist,wishproducct}=context;
   
     
    async function handeleish(){
-      const data=  await Addtowishlist(id)
+      const data =  await Addtowishlist(id)
       console.log(data);
-        if (data.status==="success") {
-    toast.success(data.message,{
-        duration:1500,
-        position:'top-center'
-    })
-   }
+  //       if (data.status==="success") {
+  //   toast.success(data.message,{
+  //       duration:1500,
+  //       position:'top-center'
+  //   })
+  //  }
      
       return data
     }
