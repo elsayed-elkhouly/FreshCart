@@ -46,7 +46,8 @@ export default async function Home() {
                   </CardFooter>
                 </Link>
                 <Addbtn id={prduct.id} />
-                <Wichbtn id={prduct.id} /></Card>
+                <div className="absolute top-5 end-3 " ><Wichbtn id={prduct.id} /></div>
+                </Card>
             </div>
 
 
