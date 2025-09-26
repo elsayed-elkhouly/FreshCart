@@ -7,11 +7,11 @@ import React, { useContext } from 'react'
 import Link from 'next/link'
 
 const Cart = () => {
-  const context  = useContext(Cartcontext)
+  const context = useContext(Cartcontext)
   if (!context) {
-  throw new Error("Cartcontext must be used within a CartProvider");
-}
-const { numOfCartItems, Products, totalPrice, removeCartItem, CartUpdate, clearAllCart }=context;
+    throw new Error("Cartcontext must be used within a CartProvider");
+  }
+  const { numOfCartItems, Products, totalPrice, removeCartItem, CartUpdate, clearAllCart } = context;
   async function delet(id: string) {
     const data = await removeCartItem(id)
     return data
@@ -21,7 +21,7 @@ const { numOfCartItems, Products, totalPrice, removeCartItem, CartUpdate, clearA
       <title>Cart</title>
       <h1 className='text-red-700 text-3xl font-bold ' > No Data </h1></div>
   }
-  const s =Products ||[]
+  const s = Products || []
   return (
     <>
 
@@ -61,7 +61,7 @@ const { numOfCartItems, Products, totalPrice, removeCartItem, CartUpdate, clearA
         })}
         <div className=' text-center '>
           <Link href={"/Payment"}>
-            <Button className='w-full md:w-[30%] text-2xl py-2'>  Chek Out </Button></Link> </div>
+            <Button className='w-full md:w-[30%] text-2xl py-2 cursor-pointer'>  Chek Out </Button></Link> </div>
       </div>
     </>
   )

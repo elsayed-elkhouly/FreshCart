@@ -6,3 +6,10 @@ export interface Brand {
   createdAt: string
   updatedAt: string
 }
+export interface ShippingValues {
+  shippingAddress: {
+    details: string;
+    phone: string;
+    city: string;
+  };
+}

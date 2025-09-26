@@ -34,16 +34,11 @@ export const authoption: AuthOptions = {
                         token:data.token
                     }
                  }   
-                      throw new Error(data.message || "failed to login")    
-
-
-
-               
+                      throw new Error(data.message || "failed to login")          
             }
         })
     ],
     callbacks:{
-        
           async jwt({ token, user}) {
             if (user) {
                 token.user=user?.user

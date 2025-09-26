@@ -15,7 +15,6 @@ import React, { createContext, useEffect, useState } from 'react'
 
 
 export const Cartcontext = createContext<CartContextType | undefined>(undefined);
-
 const ContextProvider = ({ children }: { children: React.ReactNode }) => {
     const [numOfCartItems, setnumOfCartItems] = useState(0)
     const [Products, setProducts] = useState([])
@@ -26,7 +25,7 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
 
 
 
-//  wishList
+    //  wishList
 
     async function Addtowishlist(id: string) {
         try {
@@ -41,20 +40,20 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
     }
     async function deletwishitem(id: string) {
         try {
-            const data= await Deleteitemlist(id)
-            const dataa :wishlist= data.data
+            const data = await Deleteitemlist(id)
+            const dataa: wishlist = data.data
             userwishlist()
-            return  dataa
+            return dataa
         } catch (error) {
             console.log(error);
         }
-        
+
     }
 
     async function userwishlist() {
         try {
-            const data  = await getuserwish()
-             const dataa :wishlist= data.data
+            const data = await getuserwish()
+            const dataa: wishlist = data.data
             setwishproducct(data.data)
             setofwishitem(data.count)
             setCartid(data.data.id)
@@ -64,13 +63,16 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
 
         }
     }
+
+
+
     // cart
 
     async function CartUpdate(id: string, count: number) {
-       
+
         try {
-            const data= await udateItemCount(id, count)
-                const dataa :Cart= data.data
+            const data = await udateItemCount(id, count)
+            const dataa: Cart = data.data
             setProducts(data.data.products)
             setnumOfCartItems(data.numOfCartItems)
             settotalPrice(data.data.totalCartPrice)
@@ -86,12 +88,12 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
 
         try {
             const data = await Removeitem(id)
-          const dataa :Cart= data.data
+            const dataa: Cart = data.data
             setProducts(data.data.products)
             setnumOfCartItems(data.numOfCartItems)
             settotalPrice(data.data.totalCartPrice)
 
-                return dataa
+            return dataa
         } catch (error) {
             console.log(error);
 
@@ -109,14 +111,13 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
             console.log(error);
 
         }
-        
+
     }
 
     async function userCart() {
-        
         try {
-            const data= await getuserCart()
-             const dataa :Cart= data.data
+            const data = await getuserCart()
+            const dataa: Cart = data.data
             setProducts(data.data.products)
             setnumOfCartItems(data.numOfCartItems)
             settotalPrice(data.data.totalCartPrice)
@@ -131,11 +132,10 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
     async function clearAllCart() {
         try {
             const data: Cart = await Clearcart()
+            userCart()
             setProducts([])
             setnumOfCartItems(0)
             settotalPrice(0)
-            setCartid("")
-            userCart()
             return data
         } catch (error) {
 
@@ -161,11 +161,9 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
                 numofwishitem,
                 Addtowishlist,
                 cartid
-
             }
         }>
             {children}
-
         </Cartcontext.Provider>
     )
 }

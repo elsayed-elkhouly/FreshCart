@@ -12,8 +12,6 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 
 const UpdateUser = () => {
-
-
     const format = useForm<ChangeDataSchemaType>({
         defaultValues: {
             name: "",
@@ -32,7 +30,6 @@ const UpdateUser = () => {
                 }
             })
             console.log(data);
-
             toast.success(data.message, {
                 position: "top-center"
 

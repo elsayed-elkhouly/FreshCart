@@ -7,7 +7,7 @@ import React from 'react'
 
 const Brands = async () => {
   const data = await getAllBrands()
- const s =data ||[]
+  const s = data || []
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -38,9 +38,9 @@ const Brands = async () => {
                     <span className="inline-block bg-accent text-accent-foreground px-3 py-1   font-bold">
                       {data.name}
                     </span>
-                    <Button  className="bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">
+                    <Button className="bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">
                       <Link href={`/BrandDetails/${data._id}`}> View Products</Link>
-                    </Button> 
+                    </Button>
                   </div>
                 </div>
               </div>

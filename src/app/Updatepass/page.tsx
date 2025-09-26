@@ -11,20 +11,16 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 
 const UpdatePass = () => {
-
- const [isloding,setIsloding] = useState(false)
-
+  const [isloding, setIsloding] = useState(false)
   const format = useForm<ChangePassSchemaType>({
     defaultValues: {
       currentPassword: "",
       password: "",
       rePassword: "",
-
     },
     resolver: zodResolver(ChangePassSchema)
   })
   async function changePass(value: ChangePassSchemaType) {
-   
     const token = await getmytoken()
     setIsloding(true)
     try {
@@ -37,24 +33,21 @@ const UpdatePass = () => {
       setIsloding(true)
       toast.success(data.message, {
         position: "top-center"
-
       })
       signOut({ callbackUrl: "/login" })
-     
-    }catch (error) {
+    } catch (error) {
       setIsloding(false)
-  const err = error as AxiosError<{ message: string }>;
-  toast.error(err.response?.data?.message ?? "Something went wrong", {
-    position: "top-center",
-  });
-}
-   
+      const err = error as AxiosError<{ message: string }>;
+      toast.error(err.response?.data?.message ?? "Something went wrong", {
+        position: "top-center",
+      });
+    }
+
   }
   return (
     <div className='mt-10 mx-auto w-full md:w-1/2 px-2 '>
       <title>Update Password</title>
       <h2 className='text-3xl fa-bold text-center'  > Update Password</h2>
-
       <Form {...format} >
         <form onSubmit={format.handleSubmit(changePass)} className='my-10'>
           <FormField
@@ -100,7 +93,7 @@ const UpdatePass = () => {
             )}
           />
           <button type="submit" className=" w-full mt-5  mx-auto text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 me-2 mb-2">
-            {isloding?<i className="fa-spin fa-spinner fa-solid text-white "></i>:"Change Now"}
+            {isloding ? <i className="fa-spin fa-spinner fa-solid text-white "></i> : "Change Now"}
           </button>
         </form>
       </Form>

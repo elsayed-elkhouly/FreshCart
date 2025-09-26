@@ -3,11 +3,7 @@ import { getmytoken } from "@/utilites/token";
 import axios from "axios";
 
 export async function addtocartAction(id:string) {
-
-
     const token = await getmytoken()
-
-
     const values = {
         productId: id
     }

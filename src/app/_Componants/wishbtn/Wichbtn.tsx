@@ -17,12 +17,9 @@ const Wichbtn = ({ id }: { id: string }) => {
 
 
   async function handeleish() {
-
     const data = await Addtowishlist(id)
     console.log(data);
-
     return data
-
   }
 
   function change() {

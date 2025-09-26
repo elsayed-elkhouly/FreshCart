@@ -13,11 +13,11 @@ const Navbar = () => {
   const pathname = usePathname()
 
   const { status } = useSession()
-  const context  = useContext(Cartcontext)
+  const context = useContext(Cartcontext)
   if (!context) {
-  throw new Error("Cartcontext must be used within a CartProvider");
-}
-const { numOfCartItems, numofwishitem }=context;
+    throw new Error("Cartcontext must be used within a CartProvider");
+  }
+  const { numOfCartItems, numofwishitem } = context;
 
   return (
     <>
@@ -52,23 +52,14 @@ const { numOfCartItems, numofwishitem }=context;
 
               {status === "authenticated" && <>
                 <li>
-                  <Link href={"/cart"}  className={
+                  <Link href={"/cart"} className={
                     pathname.includes("/cart")
                       ? " px-3 text-green-500   "
                       : " px-3 text-black   hover:text-green-400"
                   }>
-
-
                     Cart</Link>
                 </li>
-                <li>
 
-                  <Link href={"/WishList"} className={
-                    pathname.includes("/WishList")
-                      ? " px-3 text-green-500   "
-                      : " px-3 text-black   hover:text-green-400"
-                  }>WishList</Link>
-                </li>
                 <li>
                   <Link href={"/Products"} className={
                     pathname.includes("/Products")
@@ -89,6 +80,13 @@ const { numOfCartItems, numofwishitem }=context;
                       ? " px-3 text-green-500   "
                       : " px-3 text-black   hover:text-green-400"
                   }>Brands</Link>
+                </li>
+                <li>
+                  <Link href={"/allorders"} className={
+                    pathname.includes("/WishList")
+                      ? " px-3 text-green-500   "
+                      : " px-3 text-black   hover:text-green-400"
+                  }>Orders</Link>
                 </li>
               </>}
               {status === "unauthenticated" && <>
