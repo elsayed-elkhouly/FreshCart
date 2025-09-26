@@ -5,10 +5,8 @@ import Image from 'next/image';
 import OrderTable from '../_Componants/orderTable/OrderTable';
 import Link from 'next/link';
 import { Order} from '@/types/order.type';
-
 const Allorder = async() => {
   const data =await getAlluserOrder()
-  console.log(data);
    const AllData = data?.length || 0
   return (
 <>

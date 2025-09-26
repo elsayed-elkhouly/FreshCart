@@ -11,9 +11,6 @@ import { Cart, CartContextType } from '@/types/userCart.type'
 import { wishlist, Wishproduct } from '@/types/wishlist.type'
 import React, { createContext, useEffect, useState } from 'react'
 
-
-
-
 export const Cartcontext = createContext<CartContextType | undefined>(undefined);
 const ContextProvider = ({ children }: { children: React.ReactNode }) => {
     const [numOfCartItems, setnumOfCartItems] = useState(0)
@@ -47,16 +44,14 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
         } catch (error) {
             console.log(error);
         }
-
     }
-
     async function userwishlist() {
         try {
             const data = await getuserwish()
             const dataa: wishlist = data.data
             setwishproducct(data.data)
             setofwishitem(data.count)
-            setCartid(data.data.id)
+
             return dataa
         } catch (error) {
             console.log(error);
@@ -105,7 +100,6 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
         try {
             const data = await addtocartAction(id)
             userCart()
-            console.log(data);
             return data
         } catch (error) {
             console.log(error);

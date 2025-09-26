@@ -71,8 +71,6 @@ export interface CartContextType {
   deletwishitem: (id: string) => Promise<wishlist | undefined>;   // ✅
    numofwishitem: number;     // عدد عناصر الـ wishlist
   cartid: string;            // cart id
- 
-
 }
 export interface AddToCartResponse {
   status: "success" | "error";
