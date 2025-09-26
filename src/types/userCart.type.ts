@@ -6,7 +6,7 @@ export interface Cart {
   numOfCartItems: number
   cartId: string
   data: Data
-  message:string
+  message: string
 }
 
 export interface Data {
@@ -67,9 +67,9 @@ export interface CartContextType {
   clearAllCart: () => void;
   Addtocart: (id: string) => Promise<Cart>; // تقدر تغيّر any للـ type اللي addtocartAction بيرجّعه
   wishproducct: Wishproduct[];
-   Addtowishlist: (id: string) => Promise<wishlist | undefined>;   // ✅
+  Addtowishlist: (id: string) => Promise<wishlist | undefined>;   // ✅
   deletwishitem: (id: string) => Promise<wishlist | undefined>;   // ✅
-   numofwishitem: number;     // عدد عناصر الـ wishlist
+  numofwishitem: number;     // عدد عناصر الـ wishlist
   cartid: string;            // cart id
 }
 export interface AddToCartResponse {

@@ -24,7 +24,7 @@ const Addbtn = ({ id }: { id: string }) => {
     }
   }
   return (
-    <Button className=' bg-green-600 rounded-2xl cursor-pointer w-full   mx-auto text-center mb-0' onClick={handelAddtocart}> {isloding ? <i className='fa-solid fa-spin fa-spinner'></i> : "+ Add to Cart"}</Button>
+    <Button className=' bg-green-600 rounded-2xl cursor-pointer text-center mb-0' onClick={handelAddtocart}> {isloding ? <i className='fa-solid fa-spin fa-spinner'></i> : "+ Add to Cart"}</Button>
 
   )
 }

@@ -38,3 +38,8 @@ export interface Brand {
   slug: string
   image: string
 }
+export interface MessageSuccess {
+  status: string
+  message: string
+  data: string[]
+}

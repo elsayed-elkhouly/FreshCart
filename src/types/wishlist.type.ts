@@ -2,6 +2,7 @@ export interface wishlist {
   status: string
   count: number
   data: Wishproduct
+  message:string
 }
 
 export interface Wishproduct {

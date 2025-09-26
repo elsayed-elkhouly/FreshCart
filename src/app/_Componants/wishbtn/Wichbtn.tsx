@@ -19,6 +19,10 @@ const Wichbtn = ({ id }: { id: string }) => {
   async function handeleish() {
     const data = await Addtowishlist(id)
     console.log(data);
+    toast.success(data?.message,{
+      position:'top-center',
+      duration:1500
+    })
     return data
   }
 
