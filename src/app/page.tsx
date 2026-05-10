@@ -18,7 +18,8 @@ import Wichbtn from "./_Componants/wishbtn/Wichbtn";
 import { getmytoken } from "@/utilites/token";
 export default async function Home() {
   const data: Product[] = await getallProduct()
-
+ console.log(data);
+ 
   return (
             
     <section className=" mx-auto w-full md:w-[90%] px-5 md:px-0 py-10">
@@ -56,17 +57,6 @@ export default async function Home() {
           </div>
         })}
       </div>
-
-
-
-
-
-
-
-
-
-
-
 
     </section>
   );

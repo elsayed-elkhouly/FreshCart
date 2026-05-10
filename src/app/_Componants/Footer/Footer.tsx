@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Company Information */}
           <Card className="bg-transparent border-none shadow-none">
             <CardHeader className="p-0 mb-6">
-              <CardTitle className="text-2xl font-bold text-primary">elsayed Elkhouly  </CardTitle>
+              {/* <CardTitle className="text-2xl font-bold text-primary">elsayed Elkhouly  </CardTitle> */}
               <CardDescription className="text-muted-foreground mt-2">
                A SoftWar devolper who focuses on building smart interface and designing flexible APIs.
               </CardDescription>

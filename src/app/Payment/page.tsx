@@ -43,7 +43,10 @@ const Payment = () => {
             console.log(error);
         }
     }
-    async function cashpayment() {
+    async function 
+    
+    
+    cashpayment() {
         const values = {
             shippingAddress: {
                 details: details.current?.value,
